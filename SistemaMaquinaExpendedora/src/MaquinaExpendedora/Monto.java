@@ -36,7 +36,7 @@ public class Monto
 	    
     public Monto()
     {
-   	ceros();
+   	this.ceros();
     }
     
     public int darCantidadMonedas50()
@@ -81,6 +81,20 @@ public class Monto
     public void cambiarValor(double pValor)
     {
         // PENDIENTE
+        double s = 0; // Suma
+        if(pValor >= 0 && pValor%50 == 0)
+        {
+            while(s < pValor)
+            {
+                if(s+1000 < pValor) {s+=1000; cantidadMonedas1000++;continue;}
+                if(s+500 < pValor) {s+=500; cantidadMonedas500++;continue;}
+                if(s+200 < pValor) {s+=200; cantidadMonedas200++;continue;}
+                if(s+100 < pValor) {s+=100; cantidadMonedas100++;continue;}
+                if(s+50 < pValor) {s+=50; cantidadMonedas50++;continue;}
+                
+            }
+        }
+        
     }
     
     public boolean agregarMoneda(int pMoneda)
@@ -101,6 +115,26 @@ public class Monto
 	cantidadMonedas200 = 0;
 	cantidadMonedas500 = 0;
 	cantidadMonedas1000 = 0;
+    }
+    
+    private void imprimir()
+    {
+        /* FUNCION TEMPORAL */
+        System.out.println("cantidadMonedas50: "+cantidadMonedas50);
+        System.out.println("cantidadMonedas100: "+cantidadMonedas100);
+        System.out.println("cantidadMonedas200: "+cantidadMonedas200);
+        System.out.println("cantidadMonedas500: "+cantidadMonedas500);
+        System.out.println("cantidadMonedas1000: "+cantidadMonedas1000);
+    }
+    
+    public static void main(String[] args)
+    {
+        Monto m = new Monto();
+        m.imprimir();
+        double ingreso = 2550;
+        System.out.println("Ingresando "+ingreso+"pesos");
+        m.cambiarValor(ingreso);
+        m.imprimir();
     }
       
 }
