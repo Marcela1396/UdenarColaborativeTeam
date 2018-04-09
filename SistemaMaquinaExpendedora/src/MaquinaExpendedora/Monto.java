@@ -36,11 +36,7 @@ public class Monto
 	    
     public Monto()
     {
-   	cantidadMonedas50 = 0;
-	cantidadMonedas100 = 0;
-	cantidadMonedas200 = 0;
-	cantidadMonedas500 = 0;
-	cantidadMonedas1000 = 0;
+   	ceros();
     }
     
     public int darCantidadMonedas50()
@@ -70,12 +66,16 @@ public class Monto
     
     public double darValorTotal()
     {
-        return 0; // PENDIENTE
+        return  cantidadMonedas50*50+
+                cantidadMonedas100*100+
+                cantidadMonedas200*200+
+                cantidadMonedas500*500+
+                cantidadMonedas1000*1000;
     }
     
     public void reiniciar()
     {
-        // PENDIENTE
+        this.ceros();
     }
     
     public void cambiarValor(double pValor)
@@ -85,6 +85,22 @@ public class Monto
     
     public boolean agregarMoneda(int pMoneda)
     {
-        return true; // PENDIENTE
+        if(darValorTotal() >= VALOR_MAXIMO) {return false;}
+        else if(pMoneda == MONEDA_50) {cantidadMonedas50++;return true;}
+        else if(pMoneda == MONEDA_100) {cantidadMonedas100++;return true;}
+        else if(pMoneda == MONEDA_200) {cantidadMonedas200++;return true;}
+        else if(pMoneda == MONEDA_500) {cantidadMonedas500++;return true;}
+        else if(pMoneda == MONEDA_1000) {cantidadMonedas1000++;return true;}
+        return false; // Si no se ingresa ninguna moneda conocida
     }
+    
+    private void ceros()
+    {
+        cantidadMonedas50 = 0;
+	cantidadMonedas100 = 0;
+	cantidadMonedas200 = 0;
+	cantidadMonedas500 = 0;
+	cantidadMonedas1000 = 0;
+    }
+      
 }
