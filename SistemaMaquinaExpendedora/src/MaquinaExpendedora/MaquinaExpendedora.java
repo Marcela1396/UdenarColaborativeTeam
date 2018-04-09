@@ -2,7 +2,7 @@ package MaquinaExpendedora;
 
 /**
  *
- * @author JuanPablo
+ * @author 
  */
 public class MaquinaExpendedora
 {
