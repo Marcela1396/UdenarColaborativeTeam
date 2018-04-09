@@ -72,4 +72,19 @@ public class Monto
     {
         return 0; // PENDIENTE
     }
+    
+    public void reiniciar()
+    {
+        // PENDIENTE
+    }
+    
+    public void cambiarValor(double pValor)
+    {
+        // PENDIENTE
+    }
+    
+    public boolean agregarMoneda(int pMoneda)
+    {
+        return true; // PENDIENTE
+    }
 }
