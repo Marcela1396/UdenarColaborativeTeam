@@ -1,0 +1,59 @@
+.float_button{
+    -fx-background-image: url("btn_inf_normal.png");
+    -fx-background-size: 70px;
+    -fx-background-repeat: no-repeat;
+}
+
+.float_button:hover{
+    -fx-background-image: url("btn_inf_hover.png");
+    -fx-background-size: 70px;
+    -fx-background-repeat: no-repeat;
+}
+
+.float_button:pressed{
+    -fx-background-image: url("btn_inf_clicked.png");
+    -fx-background-size: 70px;
+    -fx-background-repeat: no-repeat;
+}
+
+.my_button{
+    -fx-background-image: url("btn_normal.png");
+    -fx-background-size: 50px;
+    -fx-background-repeat: no-repeat;
+}
+
+.my_button:hover{
+    -fx-background-image: url("btn_hover.png");
+    -fx-background-size: 50px;
+    -fx-background-repeat: no-repeat;
+}
+
+.my_button:pressed{
+    -fx-background-image: url("btn_clicked.png");
+    -fx-background-size: 50px;
+    -fx-background-repeat: no-repeat;
+}
+
+.m1_button{
+    -fx-background-image: url("btn_m1_normal.png");
+    -fx-background-size: 210px;
+    -fx-background-repeat: no-repeat;
+}
+
+.m1_button:hover{
+    -fx-background-image: url("btn_m1_hover.png");
+    -fx-background-size: 210px;
+    -fx-background-repeat: no-repeat;
+}
+
+.m1_button:pressed{
+    -fx-background-image: url("btn_m1_clicked.png");
+    -fx-background-size: 210px;
+    -fx-background-repeat: no-repeat;
+}
+
+.my_background{
+    -fx-background-image: url("img_trans.png");
+    -fx-background-size: 860px;
+    -fx-background-repeat: no-repeat;
+}
