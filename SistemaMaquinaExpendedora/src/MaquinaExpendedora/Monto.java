@@ -80,21 +80,20 @@ public class Monto
     
     public void cambiarValor(double pValor)
     {
-        // PENDIENTE
-        double s = 0; // Suma
-        if(pValor >= 0 && pValor%50 == 0)
-        {
-            while(s < pValor)
-            {
-                if(s+1000 < pValor) {s+=1000; cantidadMonedas1000++;continue;}
-                if(s+500 < pValor) {s+=500; cantidadMonedas500++;continue;}
-                if(s+200 < pValor) {s+=200; cantidadMonedas200++;continue;}
-                if(s+100 < pValor) {s+=100; cantidadMonedas100++;continue;}
-                if(s+50 < pValor) {s+=50; cantidadMonedas50++;continue;}
-                
-            }
-        }
-        
+	ceros();
+	double s = 0; // Suma
+       	if(pValor >= 0 && pValor%50 == 0)
+       	{
+       	    while(s < pValor)
+       	    {
+	       if(s+1000 <= pValor) {s+=1000; cantidadMonedas1000++;continue;}
+               if(s+500 <= pValor) {s+=500; cantidadMonedas500++;continue;}
+               if(s+200 <= pValor) {s+=200; cantidadMonedas200++;continue;}
+               if(s+100 <= pValor) {s+=100; cantidadMonedas100++;continue;}
+               if(s+50 <= pValor) {s+=50; cantidadMonedas50++;continue;}   
+           }
+       }
+       
     }
     
     public boolean agregarMoneda(int pMoneda)
