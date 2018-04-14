@@ -77,8 +77,13 @@ public class MaquinaExpendedora{
         if(pIdentificador == null || pIdentificador == ""){return false;}
         for(int i = 0; i<4; i++){        
             if(listaProductos[i].darIdentificador().compareTo(pIdentificador) == 0
-            && listaProductos[i].darCantidadUnidadesDisponibles() > 0){
-                return listaProductos[i].comprar();
+            && listaProductos[i].darCantidadUnidadesDisponibles() > 0 ){
+                if(credito.darValorTotal()>= listaProductos[i].darPrecio()){
+                    return listaProductos[i].comprar();
+                }
+                else{
+                    return false;
+                }
             }
         }
         return false;
@@ -130,7 +135,6 @@ public class MaquinaExpendedora{
             if(listaProductos[i].darTipo() == pTipo
             && listaProductos[i].esFopre()){
                 donacionPorTipo += listaProductos[i].calcularDonacionFopre()*listaProductos[i].darCantidadUnidadesCompradas();
-
             }
         }
         return donacionPorTipo;

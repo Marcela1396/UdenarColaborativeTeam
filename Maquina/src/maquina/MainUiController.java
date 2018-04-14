@@ -292,7 +292,8 @@ public class MainUiController implements Initializable {
           this.pIdentificador.compareTo("B1")==0 || this.pIdentificador.compareTo("B2")==0){
            if(m.comprarProducto(pIdentificador)){
                this.lbl_info_comprar.setText("La compra del producto fue exitosa");
-               
+               this.m.terminarCompra().cambiarValor(this.m.terminarCompra().darValorTotal()-this.m.darProducto(pIdentificador).darPrecio());
+               this.lbl_saldo.setText(this.m.terminarCompra().darValorTotal()+"$");
            }
            else{
                this.lbl_info_comprar.setText("Error al comprar");
@@ -301,6 +302,7 @@ public class MainUiController implements Initializable {
        else{
            this.lbl_info_comprar.setText("No hay identificador seleccionado");
        }
+        this.pIdentificador = "";
     }
     
     private void terminarCompra(){
@@ -312,6 +314,8 @@ public class MainUiController implements Initializable {
        +"$100\t\tx "+ this.m.terminarCompra().darCantidadMonedas100() + " = $"+(int)this.m.terminarCompra().darCantidadMonedas100()*100+"\n"
        +"$50 \t\tx "+ this.m.terminarCompra().darCantidadMonedas50() + " = $"+(int)this.m.terminarCompra().darCantidadMonedas50()*50+"\n");
        this.txt_info_term_compra.setEditable(false); 
+       
+       this.m.terminarCompra().reiniciar();
     }
     
     private void darValorTotalCompras(){
